@@ -1,0 +1,41 @@
+@use '/src/common/styles/breackpoints' as *;
+@use '/src/common/styles/templates' as *;
+@use '/src/common//styles/mixins' as *;
+
+@import '/src/common/styles/colors';
+
+$grap: 20px;
+.wrap{
+  width: 70%;
+  margin: auto;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  @include flexAlignment(space-between, center);
+
+  padding: $grap;
+  background-color: pink;
+  text-align: center;
+
+  .heading {
+    color: $colorMain;
+  }
+  button{
+    @extend %dark;
+    @include borderRadius(7px);
+    display: inline-block;
+    padding: $grap/2 $grap*2;
+    margin-bottom: $grap;
+  }
+  .btn-stop {
+    background-color: red;
+  }
+  @media screen and (min-width: $sm) {
+    flex-direction: row;
+    @include flexAlignment(space-between, center);
+    // justify-content: space-between;
+    // align-items: center;
+    margin-bottom: 0;
+  }
+}

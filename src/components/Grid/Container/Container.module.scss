@@ -1,0 +1,16 @@
+@use '/src/common/styles/breackpoints' as *;
+
+$grap: 20px;
+.container{
+  margin: auto;
+  max-width: $sm - $grap;
+  @media screen and (min-width: $md) {
+    max-width: $md - $grap;
+  }
+  @media screen and (min-width: $lg) {
+    max-width: $lg - $grap;
+  }
+  @media screen and (min-width: $xl) {
+    max-width: $xl - $grap;
+  }
+}

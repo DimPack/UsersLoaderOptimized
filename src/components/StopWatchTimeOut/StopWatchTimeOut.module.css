@@ -1,0 +1,11 @@
+.container{
+  padding: 20px;
+  background-color: rgb(192, 245, 255);
+  text-align: center;
+}
+.heading{
+  color: blue;
+}
+.btn-stop{
+  background-color: red;
+}

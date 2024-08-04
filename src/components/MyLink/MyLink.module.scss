@@ -1,0 +1,18 @@
+@use '/src/common/styles/colors' as *;
+
+$size: 200px;
+$padding-size: 10px;
+.link{
+  display: block;
+  width: $size;
+  padding: $padding-size;
+  border: {
+    color: $colorMain;
+    width: 2px;
+    style: dotted;
+  }
+  text-align: center;
+  &:hover{
+    background-color: $colorBgHover;
+  }
+}

@@ -1,0 +1,8 @@
+@mixin borderRadius($radius){
+  border-radius: $radius;
+}
+
+@mixin flexAlignment($jc, $ai){
+  justify-content: $jc;
+  align-items: $ai;
+}

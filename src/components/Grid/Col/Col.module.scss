@@ -1,0 +1,22 @@
+@use '/src/common/styles/breackpoints' as *;
+@for $i from 1 through 12 {
+  .col-sm-#{$i} {
+    width: 100% / 12 * $i;
+  }
+}
+
+@media screen and (min-width: $md) {
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      width: 100% / 12 * $i;
+    }
+  }
+}
+
+@media screen and (min-width: $lg) {
+  @for $i from 1 through 12 {
+    .col-lg-#{$i} {
+      width: 100% / 12 * $i;
+    }
+  }
+}
