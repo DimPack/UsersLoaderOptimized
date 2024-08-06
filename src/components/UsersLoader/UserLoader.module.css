@@ -1,0 +1,10 @@
+.containerUsers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 20px;
+    margin: 20px;
+    border: 8px rgb(253, 97, 0) double;
+    border-radius: 15px;
+}

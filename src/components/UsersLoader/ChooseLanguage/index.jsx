@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+const nats =['us', 'dk', 'fr', 'gb'];
 const ChooseLanguage = ({ currentNat, handlerNat = () => {} }) => {
+  const showOptions = (nat, i) => <option key={i} value={nat}>{nat}</option>
   return (
     <select name="nat" value={currentNat} onChange={handlerNat}>
-      <option value="us">us</option>
-      <option value="dk">dk</option>
-      <option value="fr">fr</option>
-      <option value="gb">gb</option>
+      {nats.map(showOptions)}
     </select>
   );
 };

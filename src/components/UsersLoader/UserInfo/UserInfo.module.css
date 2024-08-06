@@ -1,0 +1,25 @@
+.blockInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 300px;
+    width: 100%;
+    background-color: goldenrod;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.info {
+    color: rgb(0, 128, 255);
+    text-shadow: 1px 1px 2px black;
+    margin: 0;
+    font-style: italic;
+}
+.item {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}

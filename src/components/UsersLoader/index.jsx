@@ -4,8 +4,11 @@ import { getUsers } from "../../api";
 import Spinner from "../Spinner";
 import ChooseLanguage from "./ChooseLanguage";
 import InputResults from "./InputResults";
+import UserInfo from "./UserInfo";
+import Pagination from "./Pagination";
+import styles from "./UserLoader.module.css";
 
-/*PFM2024-1_REACT_AJAX_part1_071_1 */
+/*https://www.youtube.com/watch?v=jvJAmF4an54&list=PLxQIdU5bMkOiUg3p6X4BXVpIfWzMaLV7l&index=157 */
 class UsersLoader extends Component {
   constructor(props) {
     super(props);
@@ -54,7 +57,6 @@ class UsersLoader extends Component {
     }
   }
 
-  showUsers = (user) => <li key={user.login.uuid}>{user.name.first}</li>;
   prevPage = () => {
     this.setState((state, props) => {
       const { currentPage } = state;
@@ -69,6 +71,7 @@ class UsersLoader extends Component {
       return { currentPage: currentPage + 1 };
     });
   };
+
   handlerResults = ({ target: { value } }) => {
     this.setState({ currentResults: Number(value) });
   };
@@ -88,10 +91,11 @@ class UsersLoader extends Component {
       <section>
         <h2>Users:</h2>
         <div>
-          <button onClick={this.prevPage}>&lt; {/*&lt; - unicode */} </button>
-          <span> {currentPage} </span>
-          <button onClick={this.nextPage}>&gt;</button>
-
+          <Pagination
+            currentPage={currentPage}
+            prevPage={this.prevPage}
+            nextPage={this.nextPage}
+          />
           <ChooseLanguage
             currentNat={currentNat}
             handlerNat={this.handlerNat}
@@ -116,7 +120,11 @@ class UsersLoader extends Component {
           </div>
         </div>
         {users.length ? (
-          <ul>{users.map(this.showUsers)}</ul>
+          <ul className={styles.containerUsers}>
+            {users.map((user, i) => (
+              <UserInfo key={user.login.uuid} user={user} index={i + 1} />
+            ))}
+          </ul>
         ) : (
           <p>empty list of users</p>
         )}
